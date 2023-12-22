@@ -8,58 +8,113 @@ const User = sequelize.define("user", {
   role: { type: DataTypes.STRING, defaultValue: "USER" },
 });
 
-const Basket = sequelize.define("user", {
+const Basket = sequelize.define("basket", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
-const BasketProduct = sequelize.define("user", {
+const BasketProduct = sequelize.define("basket_product", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   quantity: { type: DataTypes.INTEGER, defaultValue: 1 },
   size: { type: DataTypes.STRING, allowNull: false },
 });
 
-const Product = sequelize.define("user", {
+const Product = sequelize.define("product", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: { type: DataTypes.STRING, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
 });
 
-const Category = sequelize.define("user", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  name: { type: DataTypes.STRING, allowNull: false },
-  sex: { type: DataTypes.STRING },
-});
-
-const Subcategory = sequelize.define("user", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  name: { type: DataTypes.STRING, allowNull: false },
-});
-
-const Rating = sequelize.define("user", {
+const Rating = sequelize.define("rating", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   rate: { type: DataTypes.INTEGER, allowNull: false },
-  comment: { type: DataTypes.STRING, allowNull: false },
+  comment: { type: DataTypes.STRING },
 });
 
-const ProductInfo = sequelize.define("user", {
+const ProductInfo = sequelize.define("product_info", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING, allowNull: false },
   description: { type: DataTypes.STRING, allowNull: false },
 });
 
-const Images = sequelize.define("user", {
+const Images = sequelize.define("images", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  variation: { type: DataTypes.STRING, allowNull: false },
   img: { type: DataTypes.STRING, allowNull: false },
 });
 
-const ProductColor = sequelize.define("user", {
+const ProductVariation = sequelize.define("product_variation", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
-const Color = sequelize.define("user", {
+const Color = sequelize.define("color", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING, allowNull: false },
   color: { type: DataTypes.STRING, allowNull: false },
 });
+
+const Category = sequelize.define("category", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.STRING, allowNull: false },
+  sex: { type: DataTypes.STRING },
+});
+
+const Subcategory = sequelize.define("subcategory", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.STRING, allowNull: false },
+  sex: { type: DataTypes.STRING },
+});
+
+const CategorySubcategory = sequelize.define("category_subcategory", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+});
+
+User.hasOne(Basket);
+Basket.belongsTo(User);
+
+User.hasMany(Rating);
+Rating.belongsTo(User);
+
+Basket.hasMany(BasketProduct);
+BasketProduct.belongsTo(Basket);
+
+Product.hasMany(BasketProduct);
+BasketProduct.belongsTo(Product);
+
+Product.hasMany(ProductInfo);
+ProductInfo.belongsTo(Product);
+
+Product.hasMany(Images);
+Images.belongsTo(Product);
+
+Product.hasMany(ProductVariation);
+ProductVariation.belongsTo(Product);
+
+Color.hasMany(ProductVariation);
+ProductVariation.belongsTo(Color);
+
+ProductVariation.hasMany(Images);
+Images.belongsTo(ProductVariation);
+
+Category.hasMany(Product);
+Product.belongsTo(Category);
+
+Subcategory.hasMany(Product);
+Product.belongsTo(Subcategory);
+
+Category.belongsToMany(Subcategory, { through: CategorySubcategory });
+Subcategory.belongsToMany(Category, { through: CategorySubcategory });
+
+module.exports = {
+  User,
+  Basket,
+  BasketProduct,
+  Product,
+  Rating,
+  ProductInfo,
+  Images,
+  ProductVariation,
+  Color,
+  Category,
+  Subcategory,
+  CategorySubcategory,
+};
