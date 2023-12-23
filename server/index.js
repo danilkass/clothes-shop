@@ -10,7 +10,7 @@ const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/api", router);
+app.use("/", router);
 
 //Обработка ошибок, последний Middleware
 app.use(errorHandler);
@@ -18,7 +18,7 @@ app.use(errorHandler);
 const start = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
+    await sequelize.sync(); // { alter: true } - update bd; { force: true } recreate bd
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   } catch (e) {
     console.log(`server error`);

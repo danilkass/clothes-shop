@@ -22,6 +22,7 @@ const Product = sequelize.define("product", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: { type: DataTypes.STRING, allowNull: false },
   price: { type: DataTypes.INTEGER, allowNull: false },
+  discount: { type: DataTypes.INTEGER },
   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
 });
 
