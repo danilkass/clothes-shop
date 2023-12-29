@@ -41,17 +41,18 @@ const ProductInfo = sequelize.define("product_info", {
 const Images = sequelize.define("images", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   img: { type: DataTypes.STRING, allowNull: false },
+  color: { type: DataTypes.STRING, defaultValue: "not indicated" },
 });
 
-const ProductVariation = sequelize.define("product_variation", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-});
+// const ProductVariation = sequelize.define("product_variation", {
+//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+// });
 
-const Color = sequelize.define("color", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  title: { type: DataTypes.STRING, allowNull: false },
-  color: { type: DataTypes.STRING, allowNull: false },
-});
+// const Color = sequelize.define("color", {
+//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+//   title: { type: DataTypes.STRING, allowNull: false },
+//   color: { type: DataTypes.STRING, allowNull: false },
+// });
 
 const Category = sequelize.define("category", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -81,20 +82,20 @@ BasketProduct.belongsTo(Basket);
 Product.hasMany(BasketProduct);
 BasketProduct.belongsTo(Product);
 
-Product.hasMany(ProductInfo);
+Product.hasMany(ProductInfo, { as: "info", onDelete: "CASCADE" });
 ProductInfo.belongsTo(Product);
 
-Product.hasMany(Images);
+Product.hasMany(Images, { as: "img", onDelete: "CASCADE" });
 Images.belongsTo(Product);
 
-Product.hasMany(ProductVariation);
-ProductVariation.belongsTo(Product);
+// Product.hasMany(ProductVariation);
+// ProductVariation.belongsTo(Product);
 
-Color.hasMany(ProductVariation);
-ProductVariation.belongsTo(Color);
+// Color.hasMany(ProductVariation);
+// ProductVariation.belongsTo(Color);
 
-ProductVariation.hasMany(Images);
-Images.belongsTo(ProductVariation);
+// ProductVariation.hasMany(Images);
+// Images.belongsTo(ProductVariation);
 
 Category.hasMany(Product);
 Product.belongsTo(Category);
@@ -113,8 +114,8 @@ module.exports = {
   Rating,
   ProductInfo,
   Images,
-  ProductVariation,
-  Color,
+  //   ProductVariation,
+  //   Color,
   Category,
   Subcategory,
   CategorySubcategory,
