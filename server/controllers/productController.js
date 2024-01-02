@@ -5,10 +5,14 @@ const ApiError = require("../error/ApiError");
 const { Product, ProductInfo, Images } = require("../models/models");
 const { model } = require("../db");
 
+const generateFileName = () => {
+  return uuid.v4() + ".jpg";
+};
+
 class ProductController {
   async create(req, res, next) {
     try {
-      const { name, price, discount, categoryId, subcategoryId, info, color } = req.body;
+      const { name, price, discount, categoryId, subcategoryId, info, color, size } = req.body;
       let { img } = req.files;
 
       const product = await Product.create({
@@ -17,6 +21,7 @@ class ProductController {
         discount,
         categoryId,
         subcategoryId,
+        size,
       });
 
       if (info) {
@@ -30,10 +35,6 @@ class ProductController {
         );
       }
 
-      const generateFileName = () => {
-        return uuid.v4() + ".jpg";
-      };
-
       if (!Array.isArray(img)) {
         img = [img];
       }
@@ -45,13 +46,12 @@ class ProductController {
         Images.create({
           img: fileName,
           productId: product.id,
-          color: JSON.parse(color)[index],
+          color: color.split(",")[index],
         });
       });
 
       return res.json(product);
     } catch (e) {
-      console.error("Error creating product:", e);
       next(ApiError.badRequest(e.message));
     }
   }

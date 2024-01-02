@@ -24,6 +24,7 @@ const Product = sequelize.define("product", {
   price: { type: DataTypes.INTEGER, allowNull: false },
   discount: { type: DataTypes.INTEGER },
   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
+  size: { type: DataTypes.STRING, defaultValue: "S,M,L,XL" },
 });
 
 const Rating = sequelize.define("rating", {
@@ -75,6 +76,9 @@ Basket.belongsTo(User);
 
 User.hasMany(Rating);
 Rating.belongsTo(User);
+
+Product.hasMany(Rating);
+Rating.belongsTo(Product);
 
 Basket.hasMany(BasketProduct);
 BasketProduct.belongsTo(Basket);
