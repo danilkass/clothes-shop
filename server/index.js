@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "static")));
 app.use(fileUpload({}));
-app.use("/", router);
+app.use("/clothes", router);
 
 //Обработка ошибок, последний Middleware
 app.use(errorHandler);
@@ -22,7 +22,7 @@ app.use(errorHandler);
 const start = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync(); // { alter: true } - update bd; { force: true } recreate bd
+    await sequelize.sync(); // { alter: true } - update bd; { force: true } - recreate bd
 
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   } catch (e) {
