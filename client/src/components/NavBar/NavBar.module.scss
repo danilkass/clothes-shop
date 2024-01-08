@@ -1,0 +1,51 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
+	height: 60px;
+	padding: 0 15%;
+	background-color: rgb(48, 48, 48);
+	color: #fff;
+	text-wrap: nowrap;
+
+	.logo {
+		font-size: 1.9rem;
+		color: #fff;
+	}
+
+	.navigation {
+		.item {
+			color: #fff;
+			margin: 10px;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+
+		.item {
+			margin: 10px;
+			background-color: transparent;
+
+			.icon {
+				width: 25px;
+				height: 25px;
+			}
+			.user {
+				width: 25px;
+				height: 25px;
+				// margin-bottom: 2px;
+			}
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+}

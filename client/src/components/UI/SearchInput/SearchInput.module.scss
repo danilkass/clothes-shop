@@ -1,0 +1,19 @@
+.block {
+	display: flex;
+	margin: 10px;
+
+	.searchInput {
+		padding: 0.5rem;
+		color: rgb(48, 48, 48);
+		border-radius: 5px 0 0 5px;
+	}
+
+	.searchBtn {
+		padding: 0.5rem;
+		border-radius: 0 5px 5px 0;
+		.icon {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

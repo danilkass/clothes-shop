@@ -15,7 +15,7 @@ const Basket = sequelize.define("basket", {
 const BasketProduct = sequelize.define("basket_product", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   quantity: { type: DataTypes.INTEGER, defaultValue: 1 },
-  size: { type: DataTypes.STRING, allowNull: false },
+  size: { type: DataTypes.STRING },
 });
 
 const Product = sequelize.define("product", {
@@ -24,7 +24,7 @@ const Product = sequelize.define("product", {
   price: { type: DataTypes.INTEGER, allowNull: false },
   discount: { type: DataTypes.INTEGER },
   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
-  size: { type: DataTypes.STRING, defaultValue: "S,M,L,XL" },
+  size: { type: DataTypes.STRING },
 });
 
 const Rating = sequelize.define("rating", {
@@ -44,16 +44,6 @@ const Images = sequelize.define("images", {
   img: { type: DataTypes.STRING, allowNull: false },
   color: { type: DataTypes.STRING, defaultValue: "not indicated" },
 });
-
-// const ProductVariation = sequelize.define("product_variation", {
-//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-// });
-
-// const Color = sequelize.define("color", {
-//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-//   title: { type: DataTypes.STRING, allowNull: false },
-//   color: { type: DataTypes.STRING, allowNull: false },
-// });
 
 const Category = sequelize.define("category", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
