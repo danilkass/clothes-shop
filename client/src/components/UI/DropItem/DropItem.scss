@@ -1,0 +1,36 @@
+.drop-container {
+	position: relative;
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		.drop-item {
+			opacity: 0.6;
+			top: 100%;
+		}
+
+		opacity: 1;
+	}
+}
+
+.drop-item {
+	position: absolute;
+	top: -999%;
+	transform: translateX(-50%);
+	opacity: 0;
+	padding: 0.625rem;
+	cursor: default;
+	user-select: text;
+	width: 260px;
+	white-space: wrap;
+
+	background-color: #fff;
+	transition: opacity 0.2s ease;
+	// box-shadow: 1px 1px 1px 0px #484848;
+	border-right: 1px solid #dbdada;
+	border-bottom: 1px solid #dbdada;
+}
+
+.drop-container:hover .drop-item {
+	opacity: 1;
+	top: 100%;
+}

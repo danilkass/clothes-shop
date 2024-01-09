@@ -1,3 +1,8 @@
-/* h1 {
-  text-align: center;
-} */
+.opacity-item:hover {
+  opacity: 0.6;
+  transition: 0.15s;
+}
+
+.flex-container {
+  display: flex;
+}

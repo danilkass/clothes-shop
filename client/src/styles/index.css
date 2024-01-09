@@ -81,5 +81,11 @@ body {
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(48, 48, 48);
+  color: var(--color-grey);
+}
+
+:root {
+  --main-color: #96e4df;
+  --color-green: #03c8a8;
+  --color-grey: #484848;
 }

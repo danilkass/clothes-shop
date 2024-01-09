@@ -6,12 +6,17 @@
 		padding: 0.5rem;
 		color: rgb(48, 48, 48);
 		border-radius: 5px 0 0 5px;
+		&:focus + .searchBtn .icon {
+			opacity: 1;
+		}
 	}
 
 	.searchBtn {
 		padding: 0.5rem;
 		border-radius: 0 5px 5px 0;
+
 		.icon {
+			opacity: 0.6;
 			width: 20px;
 			height: 20px;
 		}

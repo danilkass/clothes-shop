@@ -1,4 +1,4 @@
-import About from "./pages/About/Basket";
+import About from "./pages/About/About";
 import Admin from "./pages/Admin/Admin";
 import Auth from "./pages/Auth/Auth";
 import Basket from "./pages/Basket/Basket";

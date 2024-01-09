@@ -3,24 +3,41 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100vw;
-	height: 60px;
+	height: 3.75rem;
 	padding: 0 15%;
 	background-color: rgb(48, 48, 48);
 	color: #fff;
-	text-wrap: nowrap;
+	white-space: nowrap;
 
 	.logo {
 		font-size: 1.9rem;
-		color: #fff;
+		color: var(--main-color);
+		background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+		background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.navigation {
 		.item {
 			color: #fff;
-			margin: 10px;
+			margin: 0.625rem;
+			padding: 3px 5px;
 
 			&:hover {
-				opacity: 0.8;
+				opacity: 0.6;
+				transition: 0.15s;
+			}
+		}
+		.active {
+			color: #ffffff;
+			margin: 0.625rem;
+			padding: 3px 5px;
+			box-shadow: 0 1px #9c9c9c;
+
+			&:hover {
+				opacity: 0.6;
+				transition: 0.15s;
 			}
 		}
 	}
@@ -28,23 +45,20 @@
 	.menu {
 		display: flex;
 		align-items: center;
+		height: 100%;
 
 		.item {
-			margin: 10px;
+			padding: 0.625rem;
 			background-color: transparent;
+			height: 100%;
 
 			.icon {
-				width: 25px;
-				height: 25px;
-			}
-			.user {
-				width: 25px;
-				height: 25px;
-				// margin-bottom: 2px;
+				width: 1.5625rem;
+				height: 1.5625rem;
 			}
 
-			&:hover {
-				opacity: 0.6;
+			.user.icon {
+				margin-top: 30%;
 			}
 		}
 	}
