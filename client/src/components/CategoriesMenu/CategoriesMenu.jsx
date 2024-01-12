@@ -1,22 +1,26 @@
 import { observer } from "mobx-react-lite";
 import styles from "./CategoriesMenu.module.scss";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../..";
-
-function toUpperCase(str) {
-  return str.toUpperCase();
-}
 
 const CategoriesMenu = observer(() => {
   const { category } = useContext(Context);
+  const [selectedCategory, setSelectedCategory] = useState({});
 
   return (
     <div className={styles.container}>
       <ul className={styles.menu}>
         {category.category.map((mainCategory) => (
           <li className={styles.menuItem} key={mainCategory.id}>
-            <div className={`${styles.categoryLink} opacity-item`}>
-              {toUpperCase(mainCategory.name)}
+            <div
+              onMouseEnter={() => {
+                if (mainCategory !== selectedCategory) {
+                  setSelectedCategory(mainCategory);
+                }
+              }}
+              className={`${styles.categoryLink} opacity-item`}
+            >
+              {mainCategory.name}
             </div>
 
             <ul className={styles.subMenu}>

@@ -17,22 +17,24 @@ export default class CategoryStore {
       { id: 6, name: "Ремень", sex: "W" },
       { id: 7, name: "Кроссовки", sex: "W" },
       { id: 8, name: "Шорты", sex: "M" },
-      { id: 3, name: "Ремень", sex: "W" },
-      { id: 4, name: "Свитеры", sex: "W" },
-      { id: 5, name: "Шорты", sex: "M" },
-      { id: 6, name: "Ремень", sex: "W" },
-      { id: 7, name: "Кроссовки", sex: "W" },
-      { id: 8, name: "Шорты", sex: "M" },
-      { id: 3, name: "Ремень", sex: "W" },
-      { id: 4, name: "Свитеры", sex: "W" },
-      { id: 5, name: "Шорты", sex: "M" },
-      { id: 6, name: "Ремень", sex: "W" },
-      { id: 7, name: "Кроссовки", sex: "W" },
-      { id: 8, name: "Шорты", sex: "M" },
+      // { id: 3, name: "Ремень", sex: "W" },
+      // { id: 4, name: "Свитеры", sex: "W" },
+      // { id: 5, name: "Шорты", sex: "M" },
+      // { id: 6, name: "Ремень", sex: "W" },
+      // { id: 7, name: "Кроссовки", sex: "W" },
+      // { id: 8, name: "Шорты", sex: "M" },
+      // { id: 3, name: "Ремень", sex: "W" },
+      // { id: 4, name: "Свитеры", sex: "W" },
+      // { id: 5, name: "Шорты", sex: "M" },
+      // { id: 6, name: "Ремень", sex: "W" },
+      // { id: 7, name: "Кроссовки", sex: "W" },
+      // { id: 8, name: "Шорты", sex: "M" },
 
       { id: 9, name: "Шапки", sex: "W" },
       { id: 10, name: "Футболка", sex: "W" },
     ];
+
+    this._selectedCategory = {};
 
     makeAutoObservable(this);
   }
@@ -45,11 +47,19 @@ export default class CategoryStore {
     this._subcategory = subcategory;
   }
 
+  setSelectedCategory(category) {
+    this._selectedCategory = category;
+  }
+
   get category() {
     return this._category;
   }
 
   get subcategory() {
     return this._subcategory;
+  }
+
+  get SelectedCategory() {
+    return this._selectedCategory;
   }
 }

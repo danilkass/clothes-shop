@@ -11,7 +11,7 @@ const Auth = observer(() => {
   const { user } = useContext(Context);
 
   return (
-    <div style={{ height: window.innerHeight - 200 }} className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         {user.isAuth ? (
           <>
