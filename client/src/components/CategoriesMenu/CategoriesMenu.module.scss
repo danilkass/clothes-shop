@@ -1,0 +1,77 @@
+.container {
+	position: relative;
+	width: 100%;
+	padding: 0 15%;
+	display: flex;
+	justify-content: center;
+	background-color: var(--main-color-2);
+
+	li {
+		letter-spacing: 0.05em;
+	}
+}
+
+.menu {
+	padding: 0 15%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.subMenu {
+	padding: 20px 15%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	min-height: 200px;
+	background-color: var(--main-color-2);
+	opacity: 1;
+	visibility: hidden;
+	pointer-events: none;
+	cursor: default;
+	user-select: text;
+
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	justify-content: space-between;
+	align-content: start;
+}
+
+.menuItem:hover .subMenu {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	z-index: 50;
+}
+
+.menuItem {
+	font-size: 20px;
+	font-weight: 400;
+	flex: 1;
+	text-align: center;
+
+	& .categoryLink {
+		cursor: pointer;
+		padding: 10px 0px;
+	}
+}
+
+.subMenuItem {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+
+	& .subcategoryLink {
+		cursor: pointer;
+		padding: 10px;
+	}
+
+	.subcategoryLink:hover {
+		opacity: 0.6;
+	}
+}
+
+.menuItem:hover {
+	box-shadow: inset 0px -1px #00000020;
+}

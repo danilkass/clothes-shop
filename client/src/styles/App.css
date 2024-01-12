@@ -1,8 +1,32 @@
+:root {
+  --main-color: #96e4df;
+  --main-color-2: rgb(197, 221, 183);
+  --color-green: #03c8a8;
+  --color-grey: #484848;
+  --color-white: #fff;
+}
+
 .opacity-item:hover {
   opacity: 0.6;
   transition: 0.15s;
 }
 
-.flex-container {
+.center-item {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+}
+
+.wh {
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

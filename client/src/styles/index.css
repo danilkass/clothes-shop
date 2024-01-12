@@ -75,17 +75,11 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-/*nullstyle end*/
 
 body {
+  background-color: var(--color-white);
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-grey);
-}
-
-:root {
-  --main-color: #96e4df;
-  --color-green: #03c8a8;
-  --color-grey: #484848;
 }
