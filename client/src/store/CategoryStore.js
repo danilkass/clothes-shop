@@ -13,28 +13,16 @@ export default class CategoryStore {
       { id: 2, name: "Шорты", sex: "M" },
       { id: 3, name: "Ремень", sex: "W" },
       { id: 4, name: "Свитеры", sex: "W" },
-      { id: 5, name: "Шорты", sex: "M" },
+      { id: 5, name: "Жіноча білизна", sex: "M" },
       { id: 6, name: "Ремень", sex: "W" },
       { id: 7, name: "Кроссовки", sex: "W" },
-      { id: 8, name: "Шорты", sex: "M" },
-      // { id: 3, name: "Ремень", sex: "W" },
-      // { id: 4, name: "Свитеры", sex: "W" },
-      // { id: 5, name: "Шорты", sex: "M" },
-      // { id: 6, name: "Ремень", sex: "W" },
-      // { id: 7, name: "Кроссовки", sex: "W" },
-      // { id: 8, name: "Шорты", sex: "M" },
-      // { id: 3, name: "Ремень", sex: "W" },
-      // { id: 4, name: "Свитеры", sex: "W" },
-      // { id: 5, name: "Шорты", sex: "M" },
-      // { id: 6, name: "Ремень", sex: "W" },
-      // { id: 7, name: "Кроссовки", sex: "W" },
-      // { id: 8, name: "Шорты", sex: "M" },
-
+      { id: 8, name: "Взуття", sex: "M" },
       { id: 9, name: "Шапки", sex: "W" },
       { id: 10, name: "Футболка", sex: "W" },
     ];
 
     this._selectedCategory = {};
+    this._selectedSubcategory = {};
 
     makeAutoObservable(this);
   }
@@ -48,7 +36,17 @@ export default class CategoryStore {
   }
 
   setSelectedCategory(category) {
-    this._selectedCategory = category;
+    if (this._selectedCategory !== category) {
+      this._selectedCategory = category;
+      console.log(this._selectedCategory.name);
+    }
+  }
+
+  setSelectedSubcategory(subcategory) {
+    if (this._selectedSubcategory !== subcategory) {
+      this._selectedSubcategory = subcategory;
+      console.log(this._selectedSubcategory.name);
+    }
   }
 
   get category() {
@@ -61,5 +59,9 @@ export default class CategoryStore {
 
   get SelectedCategory() {
     return this._selectedCategory;
+  }
+
+  get SelectedSubategory() {
+    return this._selectedSubcategory;
   }
 }

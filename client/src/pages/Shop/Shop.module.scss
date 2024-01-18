@@ -1,5 +1,15 @@
 .wrapper {
-	width: 100%;
-	padding: 0 15%;
-	display: flex;
+	padding: 30px var(--global-pading);
+	font-size: 18px;
+	// width: 100%;
+
+	.container {
+		display: grid;
+		grid-template-columns: 2fr 12fr;
+		gap: 5px;
+
+		// .block {
+		// 	background-color: aqua;
+		// }
+	}
 }

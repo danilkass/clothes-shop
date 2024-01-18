@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import styles from "./BasketDropDown.module.scss";
+import styles from "./BasketDropMenu.module.scss";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
 
-const BasketDropDown = observer(() => {
+const BasketDropMenu = observer(() => {
   const { user } = useContext(Context);
 
   return (
@@ -17,4 +17,4 @@ const BasketDropDown = observer(() => {
   );
 });
 
-export default BasketDropDown;
+export default BasketDropMenu;

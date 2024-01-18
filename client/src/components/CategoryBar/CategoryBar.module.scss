@@ -1,0 +1,14 @@
+.container {
+	.list {
+		.item {
+			// background-color: aquamarine;
+			padding-bottom: 10px;
+			& span {
+				cursor: pointer;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+}

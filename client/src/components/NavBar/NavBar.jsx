@@ -2,40 +2,27 @@ import { useContext } from "react";
 import styles from "./NavBar.module.scss";
 import { Context } from "../../index";
 import { NavLink } from "react-router-dom";
-import { ABOUT_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../../utils/consts";
+import { LOGIN_ROUTE, MAIN_ROUTE } from "../../utils/consts";
 import { observer } from "mobx-react-lite";
 import SearchInput from "../UI/SearchInput/SearchInput.jsx";
 import "../UI/DropItem/DropItem.scss";
-import BasketDropDown from "../BasketDropDown/BasketDropDown.jsx";
+import BasketDropMenu from "../BasketDropMenu/BasketDropMenu.jsx";
+import NavigationMenu from "../NavigationMenu/NavigationMenu.jsx";
 
-import userSvg from "./user.svg";
-import authUserSvg from "./authUser.svg";
-import basketSvg from "./basket.svg";
-import adminSvg from "./admin.svg";
+import userSvg from "../../assets/user.svg";
+import authUserSvg from "../../assets/authUser.svg";
+import basketSvg from "../../assets/basket.svg";
+import adminSvg from "../../assets/admin.svg";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
   return (
     <div className={styles.navbar}>
-      <NavLink to={SHOP_ROUTE} className={styles.logo}>
-        Clothes-shop
+      <NavLink to={MAIN_ROUTE} className={styles.logo}>
+        <h1>Stylify</h1>
       </NavLink>
 
-      <nav className={styles.navigation}>
-        <NavLink
-          to={SHOP_ROUTE}
-          className={({ isActive }) => (isActive ? styles.active : styles.item)}
-        >
-          Главная
-        </NavLink>
-        {/* <NavLink className={styles.item}>Каталог</NavLink> */}
-        <NavLink
-          to={ABOUT_ROUTE}
-          className={({ isActive }) => (isActive ? styles.active : styles.item)}
-        >
-          Про нас
-        </NavLink>
-      </nav>
+      <NavigationMenu />
 
       {user.isAuth ? (
         <div className={styles.menu}>
@@ -54,7 +41,7 @@ const NavBar = observer(() => {
             <div className={`${styles.iconContainer} opacity-item`}>
               <img src={basketSvg} alt="basket" className={styles.icon} />
             </div>
-            <BasketDropDown />
+            <BasketDropMenu />
           </button>
 
           <button
@@ -79,7 +66,7 @@ const NavBar = observer(() => {
               <img src={basketSvg} alt="basket" className={styles.icon} />
             </div>
 
-            <BasketDropDown />
+            <BasketDropMenu />
           </button>
         </div>
       )}

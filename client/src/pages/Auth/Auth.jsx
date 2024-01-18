@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
 
+//Добавить валидацию, иконки для полей ввода, скрыть/показать пароль
+
 const Auth = observer(() => {
   const location = useLocation();
   const isLogin = location.pathname === LOGIN_ROUTE;
@@ -28,7 +30,11 @@ const Auth = observer(() => {
                 <input type="text" placeholder="Введите имя" className={styles.textInput} />
               )}
               <input type="text" placeholder="Введите email" className={styles.textInput} />
-              <input type="text" placeholder="Введите пароль" className={styles.textInput} />
+              <input
+                type="password"
+                placeholder="Введите пароль"
+                className={styles.textInput}
+              />
               <div className={styles.block}>
                 <button className={styles.submitBtn}>{isLogin ? "Войти" : "Создать"}</button>
 

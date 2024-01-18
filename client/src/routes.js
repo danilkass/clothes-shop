@@ -2,16 +2,18 @@ import About from "./pages/About/About";
 import Admin from "./pages/Admin/Admin";
 import Auth from "./pages/Auth/Auth";
 import Basket from "./pages/Basket/Basket";
-import ProductPage from "./pages/ProductPage/ProductPage";
 import Shop from "./pages/Shop/Shop";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import Main from "./pages/Main/Main";
 import {
   ADMIN_ROUTE,
   BASKET_ROUTE,
   PRODUCT_ROUTE,
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
-  SHOP_ROUTE,
+  MAIN_ROUTE,
   ABOUT_ROUTE,
+  SHOP_ROUTE,
 } from "./utils/consts";
 
 export const authRoutes = [
@@ -27,8 +29,8 @@ export const authRoutes = [
 
 export const publicRoutes = [
   {
-    path: SHOP_ROUTE,
-    Component: Shop,
+    path: MAIN_ROUTE,
+    Component: Main,
   },
   {
     path: LOGIN_ROUTE,
@@ -41,6 +43,10 @@ export const publicRoutes = [
   {
     path: PRODUCT_ROUTE + "/:id",
     Component: ProductPage,
+  },
+  {
+    path: SHOP_ROUTE,
+    Component: Shop,
   },
   {
     path: ABOUT_ROUTE,

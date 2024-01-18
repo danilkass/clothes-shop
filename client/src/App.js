@@ -1,14 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
 import "./styles/App.css";
-import AppRouter from "./components/AppRouter";
+import AppRouter from "./components/AppRouter/AppRouter";
 import NavBar from "./components/NavBar/NavBar";
-import CategoriesMenu from "./components/CategoriesMenu/CategoriesMenu";
+import CategoryMenu from "./components/CategoryMenu/CategoryMenu";
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <CategoriesMenu />
+      <CategoryMenu />
       <AppRouter />
     </BrowserRouter>
   );

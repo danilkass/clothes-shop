@@ -1,0 +1,29 @@
+.price {
+	margin-top: auto;
+	font-size: 24px;
+	.currency {
+		font-size: 1.2rem;
+		margin-left: 3px;
+	}
+}
+
+.priceIfDiscount {
+	text-decoration: line-through;
+	color: #7e7e7e;
+	font-size: 1rem;
+
+	.currency {
+		margin-left: 3px;
+		font-size: 0.9rem;
+	}
+}
+
+.discount {
+	font-size: 24px;
+	color: red;
+
+	.currency {
+		font-size: 1.2rem;
+		margin-left: 3px;
+	}
+}

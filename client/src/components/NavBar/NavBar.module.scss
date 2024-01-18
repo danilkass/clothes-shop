@@ -2,47 +2,27 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	width: 100vw;
+
+	width: 100%;
 	height: 3.75rem;
-	padding: 0 15%;
+	padding: 0 var(--global-pading);
 	background-color: rgb(48, 48, 48);
 	color: #fff;
 	white-space: nowrap;
 
 	.logo {
-		font-size: 1.6rem;
+		font-size: 1.8rem;
 		font-weight: 500;
 		color: var(--main-color-2);
 		// background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
 		// background-clip: border-box;
 		// -webkit-background-clip: text;
 		// -webkit-text-fill-color: transparent;
-		width: 314px;
-	}
 
-	.navigation {
-		.item {
-			color: #fff;
-			margin: 0.625rem;
-			padding: 3px 5px;
+		width: 19rem;
 
-			&:hover {
-				opacity: 0.6;
-				transition: 0.15s;
-			}
-		}
-		.active {
-			color: #ffffff;
-			margin: 0.625rem;
-			padding: 3px 5px;
-			box-shadow: 0 1px #9c9c9c;
-
-			&:hover {
-				opacity: 0.6;
-				transition: 0.15s;
-			}
+		&:hover {
+			text-shadow: 0 0 3px var(--main-color-2);
 		}
 	}
 

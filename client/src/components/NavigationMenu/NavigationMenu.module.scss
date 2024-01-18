@@ -1,0 +1,23 @@
+.navigation {
+	.item {
+		color: #fff;
+		margin: 0.625rem;
+		padding: 3px 5px;
+
+		&:hover {
+			opacity: 0.6;
+			transition: 0.15s;
+		}
+	}
+	.active {
+		color: #ffffff;
+		margin: 0.625rem;
+		padding: 3px 5px;
+		box-shadow: 0 1px #9c9c9c;
+
+		&:hover {
+			opacity: 0.6;
+			transition: 0.15s;
+		}
+	}
+}

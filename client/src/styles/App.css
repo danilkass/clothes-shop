@@ -1,9 +1,13 @@
 :root {
   --main-color: #96e4df;
   --main-color-2: rgb(197, 221, 183);
+  --main-color-3: rgb(173, 194, 161);
   --color-green: #03c8a8;
   --color-grey: #484848;
   --color-white: #fff;
+  --global-yellow: #d3b35b;
+  --global-green: #00a046;
+  --global-pading: 10%;
 }
 
 .opacity-item:hover {
