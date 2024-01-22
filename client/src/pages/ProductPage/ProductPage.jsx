@@ -7,7 +7,7 @@ import ProductDiscount from "../../components/UI/ProductDiscount/ProductDiscount
 function ProductPage() {
   const product = {
     id: 1,
-    name: "штаны спортивные",
+    name: "Штаны спортивные",
     price: 300,
     discount: 259,
     rating: "4",

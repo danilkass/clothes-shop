@@ -14,12 +14,17 @@
 	// height: 400px;
 	position: relative;
 	.productImage {
-		width: 100%;
+		width: 50%;
 	}
 }
 
-// .productInfo {
-// }
+.productInfo {
+	.productName {
+		font-size: 24px;
+
+		margin-bottom: 5px;
+	}
+}
 
 .buyButton {
 	align-items: center;
@@ -29,6 +34,14 @@
 	height: 40px;
 	width: 100px;
 	border-radius: 8px;
-	background-color: #00a046;
+	background-color: var(--main-color-4);
 	color: #fff;
+
+	margin: 8px 0;
+
+	&:hover {
+		transition: 0.5s;
+		background-color: var(--main-color-3);
+		// color: var(--color-grey);
+	}
 }

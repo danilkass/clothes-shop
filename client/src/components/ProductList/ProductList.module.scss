@@ -1,5 +1,11 @@
-.container {
+.bigGrid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+.smallGrid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
 	gap: 10px;
 }

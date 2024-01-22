@@ -6,6 +6,7 @@ import UserStore from "./store/UserStore";
 import ProductStore from "./store/ProductStore";
 import CategoryStore from "./store/CategoryStore";
 import BasketStore from "./store/BasketStore";
+import GlobalUIStore from "./store/GlobalUIStore";
 
 export const Context = createContext(null);
 
@@ -18,6 +19,7 @@ root.render(
         product: new ProductStore(),
         category: new CategoryStore(),
         basket: new BasketStore(),
+        global: new GlobalUIStore(),
       }}
     >
       <App />

@@ -12,7 +12,18 @@ const generateFileName = () => {
 class ProductController {
   async create(req, res, next) {
     try {
-      const { name, price, discount, categoryId, subcategoryId, info, color, size } = req.body;
+      const {
+        name,
+        price,
+        discount,
+        categoryId,
+        subcategoryId,
+        info,
+        color,
+        size,
+        sex,
+        shortDescription,
+      } = req.body;
       let { img } = req.files;
 
       const product = await Product.create({
@@ -22,6 +33,8 @@ class ProductController {
         categoryId,
         subcategoryId,
         size,
+        sex,
+        shortDescription,
       });
 
       if (info) {

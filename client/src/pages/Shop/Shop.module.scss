@@ -3,6 +3,11 @@
 	font-size: 18px;
 	// width: 100%;
 
+	.CatalogSettings {
+		display: flex;
+		justify-content: flex-end;
+	}
+
 	.container {
 		display: grid;
 		grid-template-columns: 2fr 12fr;

@@ -1,5 +1,6 @@
 .container {
 	font-size: 1rem;
+	margin-bottom: 8 px;
 }
 
 .buttonContainer {
@@ -22,12 +23,12 @@
 		border-radius: 8px;
 
 		&:hover {
-			border-color: var(--global-green);
+			border-color: var(--main-color-4);
 			transition: 0.4s;
 		}
 	}
 
 	.active {
-		border-color: var(--global-green);
+		border-color: var(--main-color-4);
 	}
 }

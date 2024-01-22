@@ -5,10 +5,10 @@ import { Context } from "../..";
 import ProductItem from "../ProductItem/ProductItem";
 
 const ProductList = observer(() => {
-  const { product } = useContext(Context);
+  const { product, global } = useContext(Context);
 
   return (
-    <div className={styles.container}>
+    <div className={global.itemsGrid ? styles.bigGrid : styles.smallGrid}>
       {product.product.map((product) => (
         <ProductItem key={product.id} product={product} />
       ))}

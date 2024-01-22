@@ -1,7 +1,7 @@
-import "./DropItem.scss";
+// import "./DropItem.scss";
 
-function DropItem({ children }) {
-  return <div className="drop-item ">{children}</div>;
-}
+// function DropItem({ children }) {
+//   return <div className="drop-item ">{children}</div>;
+// }
 
-export default DropItem;
+// export default DropItem;

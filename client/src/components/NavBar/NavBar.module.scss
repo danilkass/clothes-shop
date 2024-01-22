@@ -19,10 +19,11 @@
 		// -webkit-background-clip: text;
 		// -webkit-text-fill-color: transparent;
 
-		width: 19rem;
+		width: 18.5rem;
 
 		&:hover {
-			text-shadow: 0 0 3px var(--main-color-2);
+			transition: text-shadow 0.3s;
+			text-shadow: 0 0 2px var(--main-color-2);
 		}
 	}
 

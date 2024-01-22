@@ -1,59 +1,114 @@
-import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Auth.module.scss";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../../utils/consts";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
+import { AiOutlineUser } from "react-icons/ai";
+import { TbUserCheck } from "react-icons/tb";
 
 //Добавить валидацию, иконки для полей ввода, скрыть/показать пароль
 
 const Auth = observer(() => {
-  const location = useLocation();
-  const isLogin = location.pathname === LOGIN_ROUTE;
   const { user } = useContext(Context);
+  const [modalActive, setModalActive] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        {user.isAuth ? (
-          <>
-            <div>Вы успешно вошли в аккаунт!</div>
-            <button onClick={() => user.setIsAuth(false)} className={styles.submitBtn}>
-              Выйти
-            </button>
-          </>
-        ) : (
-          <>
-            <h2 className={styles.title}>{isLogin ? "Авторизация" : "Регистрация"}</h2>
-            <form className={styles.form}>
-              {!isLogin && (
-                <input type="text" placeholder="Введите имя" className={styles.textInput} />
-              )}
-              <input type="text" placeholder="Введите email" className={styles.textInput} />
-              <input
-                type="password"
-                placeholder="Введите пароль"
-                className={styles.textInput}
-              />
-              <div className={styles.block}>
-                <button className={styles.submitBtn}>{isLogin ? "Войти" : "Создать"}</button>
+      <div
+        className={styles.container}
+        onClick={() => {
+          setModalActive(true);
+        }}
+      >
+        <div className={`${styles.iconContainer}`}>
+          {user.isAuth ? <TbUserCheck size={25} /> : <AiOutlineUser size={30} />}
+        </div>
+      </div>
 
-                <div className={styles.linkBlock}>
-                  {isLogin ? "Нет аккаунта?" : "Есть аккаунт?"}{" "}
-                  {isLogin ? (
-                    <NavLink to={REGISTRATION_ROUTE} className={styles.link}>
-                      Создайте!
-                    </NavLink>
-                  ) : (
-                    <NavLink to={LOGIN_ROUTE} className={styles.link}>
-                      Войдите!
-                    </NavLink>
-                  )}
-                </div>
-              </div>
-            </form>
-          </>
-        )}
+      <div
+        className={`${styles.modal} ${modalActive && styles.activeModal}`}
+        onClick={() => setModalActive(false)}
+      >
+        <div
+          className={`${styles.modalContainer} ${modalActive && styles.activeModal}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className={styles.modalHeader}>
+            {user.isAuth ? (
+              <div className={styles.title}>Вы успешно вошли в аккаунт!</div>
+            ) : (
+              <>
+                {isLogin ? (
+                  <div className={styles.title}>Вхід</div>
+                ) : (
+                  <div className={styles.title}>Реєстрація</div>
+                )}
+              </>
+            )}
+          </div>
+          <div className={styles.modalContent}>
+            {user.isAuth ? (
+              <button onClick={() => user.setIsAuth(false)} className={styles.submitBtn}>
+                Вийти
+              </button>
+            ) : (
+              <>
+                {isLogin ? (
+                  <form className={styles.form}>
+                    <input
+                      type="text"
+                      placeholder="Введите email"
+                      className={styles.textInput}
+                    />
+                    <input
+                      type="password"
+                      placeholder="Введите пароль"
+                      className={styles.textInput}
+                    />
+                    <div className={styles.block}>
+                      <button className={styles.submitBtn}>Увійти</button>
+
+                      <div className={styles.linkBlock}>
+                        <div onClick={() => setIsLogin(false)} className={styles.link}>
+                          Зареєструватися
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                ) : (
+                  <form className={styles.form}>
+                    <input
+                      type="text"
+                      placeholder="Введите имя"
+                      className={styles.textInput}
+                    />
+
+                    <input
+                      type="text"
+                      placeholder="Введите email"
+                      className={styles.textInput}
+                    />
+                    <label></label>
+                    <input
+                      type="password"
+                      placeholder="Введите пароль"
+                      className={styles.textInput}
+                    />
+                    <div className={styles.block}>
+                      <button className={styles.submitBtn}>Зареєструватися</button>
+
+                      <div className={styles.linkBlock}>
+                        <div onClick={() => setIsLogin(true)} className={styles.link}>
+                          Я вже зареєстрованний
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                )}
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
