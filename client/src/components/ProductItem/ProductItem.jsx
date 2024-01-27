@@ -1,11 +1,12 @@
 import { PRODUCT_ROUTE } from "../../utils/consts";
-import ProductDiscount from "../UI/ProductDiscount/ProductDiscount";
+import ProductBaner from "../UI/ProductBaner/ProductBaner";
+// import ProductDiscount from "../UI/ProductDiscount/ProductDiscount";
 import ProductPrice from "../UI/ProductPrice/ProductPrice";
 import StarRating from "../UI/StarRating/StarRating";
 import styles from "./ProductItem.module.scss";
 import { useNavigate } from "react-router-dom";
 
-function ProductItem({ product }) {
+function ProductItem({ product, baner }) {
   const navigate = useNavigate();
 
   const openProduct = (id) => {
@@ -23,7 +24,7 @@ function ProductItem({ product }) {
         <img className={styles.image} src={product.img} alt="Product card"></img>
       </div>
 
-      <ProductDiscount price={product.price} discount={product.discount} />
+      {baner && <ProductBaner product={product} fontSize={14} />}
 
       <div className={styles.productInfo}>
         <div

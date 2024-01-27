@@ -21,54 +21,10 @@
 	}
 }
 
-.modal {
-	background-color: rgba(0, 0, 0, 0.4);
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: 50;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	pointer-events: none;
-	transition: 0.3s;
-
-	.modalContainer {
-		min-width: 650px;
-		min-height: 400px;
-		border-radius: 15px;
-		background-color: #fff;
-		color: var(--color-grey);
-		transition: 0.2s;
-		display: none;
-		transform: scale(0.4);
-		padding: 30px;
-
-		.modalHeader {
-			width: 100%;
-			max-width: 100%;
-			border-bottom: 1px solid var(--global-black-10);
-		}
-		.modalContent {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
+.modalHeader {
+	border-bottom: 1px solid var(--global-black-10);
+	margin-bottom: 20px;
 }
-.modal.activeModal {
-	opacity: 1;
-	pointer-events: all;
-}
-.modalContainer.activeModal {
-	display: flex;
-	flex-direction: column;
-	transform: scale(1);
-}
-
-//Form styles
 
 .title {
 	font-size: 24px;
@@ -99,7 +55,7 @@
 		align-items: center;
 		cursor: default;
 		.linkBlock {
-			font-size: 14px;
+			font-size: 16px;
 			.link {
 				cursor: pointer;
 				color: var(--main-color-4);
@@ -117,7 +73,7 @@
 	height: 48px;
 	font-size: 18px;
 	padding: 10px;
-	margin-bottom: 10px;
+	margin: 10px 0;
 
 	color: #484848;
 

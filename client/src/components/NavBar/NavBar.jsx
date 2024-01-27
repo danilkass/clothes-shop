@@ -1,20 +1,22 @@
 import { useContext } from "react";
 import styles from "./NavBar.module.scss";
 import { Context } from "../../index";
-import { NavLink } from "react-router-dom";
-import { MAIN_ROUTE } from "../../utils/consts";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ADMIN_ROUTE, BASKET_ROUTE, MAIN_ROUTE } from "../../utils/consts";
 import { observer } from "mobx-react-lite";
 import SearchInput from "../UI/SearchInput/SearchInput.jsx";
 import "../UI/DropItem/DropItem.scss";
 import BasketDropMenu from "../BasketDropMenu/BasketDropMenu.jsx";
 import NavigationMenu from "../NavigationMenu/NavigationMenu.jsx";
+import Auth from "../Modal/Auth/Auth.jsx";
 
 import basketSvg from "../../assets/basket.svg";
 import adminSvg from "../../assets/admin.svg";
-import Auth from "../../pages/Auth/Auth.jsx";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
+  const navigate = useNavigate();
+
   return (
     <div className={styles.navbar}>
       <NavLink to={MAIN_ROUTE} className={styles.logo}>
@@ -28,16 +30,19 @@ const NavBar = observer(() => {
           <SearchInput />
 
           <Auth />
-          <button className={`${styles.item} drop-container `}>
-            <div className={`${styles.iconContainer} opacity-item`}>
+          <div className={`${styles.item} drop-container `}>
+            <button
+              onClick={() => navigate(BASKET_ROUTE)}
+              className={`${styles.iconContainer} opacity-item`}
+            >
               <img src={basketSvg} alt="basket" className={styles.icon} />
-            </div>
+            </button>
             <BasketDropMenu />
-          </button>
+          </div>
 
           <button
             className={`${styles.item} opacity-item`}
-            onClick={() => user.setIsAuth(!user.isAuth)}
+            onClick={() => navigate(ADMIN_ROUTE)}
           >
             <div className={`${styles.iconContainer} opacity-item`}>
               <img src={adminSvg} alt="admin panel" className={styles.icon} />
@@ -49,13 +54,17 @@ const NavBar = observer(() => {
           <SearchInput />
 
           <Auth />
-          <button className={`${styles.item} drop-container`}>
-            <div className={`${styles.iconContainer} opacity-item`}>
+
+          <div className={`${styles.item} drop-container`}>
+            <button
+              onClick={() => navigate(BASKET_ROUTE)}
+              className={`${styles.iconContainer} opacity-item`}
+            >
               <img src={basketSvg} alt="basket" className={styles.icon} />
-            </div>
+            </button>
 
             <BasketDropMenu />
-          </button>
+          </div>
         </div>
       )}
     </div>

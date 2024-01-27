@@ -1,7 +1,7 @@
 import About from "./pages/About/About";
 import Admin from "./pages/Admin/Admin";
 // import Auth from "./pages/Auth/Auth";
-import Basket from "./pages/Basket/Basket";
+import Basket from "./components/Modal/Basket/Basket";
 import Shop from "./pages/Shop/Shop";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Main from "./pages/Main/Main";
