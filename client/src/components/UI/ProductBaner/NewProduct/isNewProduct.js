@@ -6,7 +6,7 @@ export default function isNewProduct(createdAt) {
   // Вычисляем разницу в миллисекундах
   const differenceInMilliseconds = now - created;
   // Определяем количество миллисекунд в одной неделе
-  const millisecondsInAWeek = 7 * 24 * 60 * 60 * 1000;
+  const millisecondsInAWeek = 8 * 24 * 60 * 60 * 1000;
   // Проверяем, что разница меньше или равна одной неделе
   const isNew = differenceInMilliseconds <= millisecondsInAWeek;
   //   console.log("Is within a week:", isNew);

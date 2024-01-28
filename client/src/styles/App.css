@@ -1,13 +1,18 @@
 :root {
   /* --main-color: #96e4df; */
-  --main-color-2: rgb(197, 221, 183);
+
+  --main-color-2: rgb(200, 220, 180);
+  --main-color-3: rgb(160, 190, 140);
+  --main-color-4: rgb(140, 170, 120);
+  /* --main-color-2: rgb(197, 221, 183);
   --main-color-3: rgb(173, 194, 161);
-  --main-color-4: rgb(137, 167, 120);
+  --main-color-4: rgb(137, 167, 120); */
   /* --color-green: #03c8a8; */
   --color-grey: #484848;
   --color-white: #fff;
   --global-red: #f84147;
   --global-yellow: #ffa900;
+  --global-blue: #3e77aa;
   --global-purple: rgb(113, 43, 212);
   --global-green: #00a046;
   --global-green-2: #44b26f;
@@ -29,7 +34,8 @@
 
 .d-flex {
   display: flex;
-  width: 100%;
+  align-items: center;
+  /* width: 100%; */
 }
 
 .wh {

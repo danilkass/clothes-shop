@@ -5,11 +5,11 @@ function Modal({ active, setActive, children }) {
   return (
     <div
       className={`${styles.modal} ${active && styles.activeModal}`}
-      onClick={() => setActive(false)}
+      onMouseDown={() => setActive(false)}
     >
       <div
         className={`${styles.modalContainer} ${active && styles.activeModal}`}
-        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
       >
         <div className={styles.closeButton} onClick={() => setActive(false)}>
           <FaXmark size={24} />

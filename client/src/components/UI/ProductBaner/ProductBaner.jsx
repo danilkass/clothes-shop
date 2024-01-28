@@ -8,7 +8,7 @@ function ProductBaner({ product: { price, discount, rating, createdAt }, fontSiz
   const isNew = isNewProduct(createdAt);
 
   if (isNew) {
-    return <NewProduct createdAt={createdAt} fontSize={fontSize} />;
+    return <NewProduct fontSize={fontSize} />;
   } else if (rating >= 4) {
     return <ProductTopRating fontSize={fontSize} />;
   } else if (discount) {
