@@ -3,12 +3,11 @@ import ProductSize from "../../components/UI/ProductSize/ProductSize";
 import styles from "./ProductPage.module.scss";
 import Breadcrumbs from "../../components/UI/Breadcrumbs/Breadcrumbs";
 import ProductPrice from "../../components/UI/ProductPrice/ProductPrice";
-import ProductBaner from "../../components/UI/ProductBaner/ProductBaner";
 import ProductGalery from "../../components/ProductGalery/ProductGalery";
 
 function ProductPage() {
   const product = {
-    id: 1,
+    id: 876767774,
     name: "Футболка однотонная",
     price: 300,
     discount: 259,
@@ -54,7 +53,7 @@ function ProductPage() {
 
           <div className={styles.productTrade}>
             <ProductPrice price={product.price} discount={product.discount} fontSize={28} />
-            <button className={styles.buyButton}>Купить</button>
+            <button className={styles.buyButton}>В кошик</button>
           </div>
         </div>
       </div>

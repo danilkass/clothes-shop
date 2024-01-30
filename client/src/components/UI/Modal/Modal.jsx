@@ -1,6 +1,17 @@
 import styles from "./Modal.module.scss";
 import { FaXmark } from "react-icons/fa6";
 
+// Use it for structure your modal
+
+// .modalHeader {
+// 	border-bottom: 1px solid var(--global-black-10);
+// 	margin-bottom: 20px;
+// }
+// .modalContent {
+// 	height: 100%;
+// 	overflow-y: auto;
+// }
+
 function Modal({ active, setActive, children }) {
   return (
     <div
@@ -15,7 +26,7 @@ function Modal({ active, setActive, children }) {
           <FaXmark size={24} />
         </div>
 
-        {children}
+        <div className={styles.children}>{children}</div>
       </div>
     </div>
   );
