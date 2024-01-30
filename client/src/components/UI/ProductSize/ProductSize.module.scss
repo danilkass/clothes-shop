@@ -1,12 +1,15 @@
 .container {
 	font-size: 1rem;
 	margin-bottom: 8 px;
+
+	.selectedSizeLabel {
+		color: var(--color-grey-2);
+	}
 }
 
 .buttonContainer {
 	display: flex;
-	margin-top: 5px;
-	margin-bottom: 8px;
+	margin: 8px 0;
 
 	.sizeButton {
 		color: var(--color-grey);

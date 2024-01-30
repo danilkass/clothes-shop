@@ -4,16 +4,33 @@ import styles from "./ProductPage.module.scss";
 import Breadcrumbs from "../../components/UI/Breadcrumbs/Breadcrumbs";
 import ProductPrice from "../../components/UI/ProductPrice/ProductPrice";
 import ProductBaner from "../../components/UI/ProductBaner/ProductBaner";
+import ProductGalery from "../../components/ProductGalery/ProductGalery";
 
 function ProductPage() {
   const product = {
     id: 1,
-    name: "Штаны спортивные",
+    name: "Футболка однотонная",
     price: 300,
     discount: 259,
     rating: 4,
     size: ["S", "M", "L", "XXXL"],
-    img: "https://exso.com.ua/wp-content/uploads/2021/06/5520orange.jpeg",
+    img: [
+      {
+        id: 1,
+        img: "https://exso.com.ua/wp-content/uploads/2021/06/5520orange.jpeg",
+        color: "orange",
+      },
+      {
+        id: 2,
+        img: "https://content2.rozetka.com.ua/goods/images/big/279984387.jpg",
+        color: "blue",
+      },
+      {
+        id: 3,
+        img: "https://modnamayka.com.ua/images/products/backs/m_f_1.png",
+        color: "black",
+      },
+    ],
     createdAt: "2024-01-21T12:00:00.000Z",
   };
 
@@ -21,18 +38,24 @@ function ProductPage() {
     <div className={styles.wrapper}>
       <Breadcrumbs />
       <div className={styles.container}>
-        <div className={styles.imageContainer}>
-          <img className={styles.productImage} src={product.img} alt="product" />
-          <ProductBaner product={product} fontSize={14} />
+        <div className={styles.productPicture}>
+          {/* <img className={styles.productImage} src={product.img} alt="product" />
+          <ProductBaner product={product} fontSize={14} /> */}
+          <ProductGalery product={product} />
         </div>
 
-        <div className={styles.productInfo}>
+        <div className={styles.productAbout}>
           <div className={styles.productName}>{product.name}</div>
-          <StarRating rating={product.rating} size={20} />
+          <div className={styles.productRating}>
+            <StarRating rating={product.rating} size={20} />
+            <span className={styles.productCode}>Код: {product.id}</span>
+          </div>
           <ProductSize size={product.size} />
 
-          <ProductPrice price={product.price} discount={product.discount} />
-          <button className={styles.buyButton}>Купить</button>
+          <div className={styles.productTrade}>
+            <ProductPrice price={product.price} discount={product.discount} fontSize={28} />
+            <button className={styles.buyButton}>Купить</button>
+          </div>
         </div>
       </div>
     </div>

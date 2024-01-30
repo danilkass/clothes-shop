@@ -9,7 +9,7 @@
 	gap: 10px;
 }
 
-.imageContainer {
+.productPicture {
 	// width: 500px;
 	// height: 400px;
 	position: relative;
@@ -22,7 +22,24 @@
 	.productName {
 		font-size: 24px;
 
-		margin-bottom: 5px;
+		margin-bottom: 16px;
+	}
+
+	.productRating {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--color-grey-2);
+		font-size: 14px;
+		margin-right: 8px;
+		margin-bottom: 16px;
+	}
+
+	.productTrade {
+		margin-top: 16px;
+		display: flex;
+		align-items: center;
+		gap: 30px;
 	}
 }
 

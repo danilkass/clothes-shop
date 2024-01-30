@@ -95,6 +95,7 @@
 				color: var(--global-blue);
 
 				&:hover {
+					transition: 0.15s;
 					color: var(--global-red);
 					opacity: 0.8;
 					text-decoration: underline;

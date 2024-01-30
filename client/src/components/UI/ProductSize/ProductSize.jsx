@@ -6,7 +6,9 @@ function ProductSize({ size }) {
 
   return (
     <div className={styles.container}>
-      <div>Обраний розмір: {selectedSize}</div>
+      <div>
+        <span className={styles.selectedSizeLabel}>Обраний розмір:</span> {selectedSize}
+      </div>
       <div className={styles.buttonContainer}>
         {size.map((size, index) => {
           return (
