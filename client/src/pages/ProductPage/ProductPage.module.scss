@@ -4,25 +4,18 @@
 }
 
 .container {
+	margin-top: 20px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
 }
 
-.productPicture {
-	// width: 500px;
-	// height: 400px;
-	position: relative;
-	.productImage {
-		width: 50%;
-	}
-}
-
-.productAbout {
+.productMainInfo {
 	.productName {
 		font-size: 24px;
-
+		font-weight: 500;
 		margin-bottom: 16px;
+		opacity: 0.95;
 	}
 
 	.productRating {
@@ -33,6 +26,12 @@
 		font-size: 14px;
 		margin-right: 8px;
 		margin-bottom: 16px;
+	}
+	.productRatingReviews {
+		display: flex;
+		align-items: center;
+
+		gap: 8px;
 	}
 
 	.productTrade {
@@ -55,11 +54,43 @@
 	background-color: var(--main-color-4);
 	color: #fff;
 
-	margin: 8px 0;
+	margin: 16px 0;
 
 	&:hover {
 		transition: 0.5s;
 		background-color: var(--main-color-3);
 		// color: var(--color-grey);
 	}
+}
+
+.productAboutLeft,
+.productAboutRight {
+	margin-top: 10px;
+}
+.productAboutLeft {
+	padding-right: 24px;
+}
+// .productAboutRight {
+// 	// padding-left: 24px;
+// }
+
+.productTabsHeading {
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 16px;
+	opacity: 0.95;
+	margin: 0 24px 24px 0;
+
+	span {
+		opacity: 0.3;
+	}
+}
+
+.productDescription {
+	margin: 24px 8px 24px 0;
+	line-height: 30px;
+}
+.productDescriptionContent {
+	font-size: 1rem;
+	word-break: break-word;
 }

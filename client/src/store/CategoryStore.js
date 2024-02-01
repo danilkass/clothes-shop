@@ -57,11 +57,11 @@ export default class CategoryStore {
     return this._subcategory;
   }
 
-  get SelectedCategory() {
+  get selectedCategory() {
     return this._selectedCategory;
   }
 
-  get SelectedSubategory() {
+  get selectedSubategory() {
     return this._selectedSubcategory;
   }
 }

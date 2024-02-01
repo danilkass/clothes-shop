@@ -31,10 +31,10 @@ function ProductGalery({ product }) {
 
         <div className={styles.sliderBtnWrapper}>
           <button className={styles.sliderBtn} onClick={handlePrev}>
-            <IoIosArrowBack size={24} />
+            <IoIosArrowBack size={24} color="#484848" />
           </button>
           <button className={styles.sliderBtn} onClick={handleNext}>
-            <IoIosArrowBack size={24} />
+            <IoIosArrowBack size={24} color="#484848" />
           </button>
         </div>
       </div>

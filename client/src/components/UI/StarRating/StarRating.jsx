@@ -16,7 +16,7 @@ function StarRating({ rating, size }) {
           );
         })
       ) : (
-        <div className={styles.label}>Нет отзывов</div>
+        <div className={styles.label}>Немає відгуків</div>
       )}
     </div>
   );

@@ -1,0 +1,40 @@
+.characteristicsList {
+	.characteristicsItem {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-bottom: 12px;
+
+		.characteristicsLabel {
+			position: relative;
+			align-self: flex-start;
+			width: 40%;
+			font-size: 1rem;
+			word-break: break-word;
+
+			span {
+				position: relative;
+				display: inline-block;
+				padding-right: 16px;
+				background-color: #fff;
+			}
+
+			&::before {
+				position: absolute;
+				left: 0;
+				bottom: 4px;
+
+				width: 100%;
+				border-bottom: 1px dotted #d2d2d2;
+				content: "";
+			}
+		}
+		.characteristicsValue {
+			width: 60%;
+			padding-left: 16px;
+			box-sizing: border-box;
+			font-size: 1rem;
+			word-break: break-word;
+		}
+	}
+}

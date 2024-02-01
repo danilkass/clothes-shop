@@ -4,6 +4,8 @@ import styles from "./ProductPage.module.scss";
 import Breadcrumbs from "../../components/UI/Breadcrumbs/Breadcrumbs";
 import ProductPrice from "../../components/UI/ProductPrice/ProductPrice";
 import ProductGalery from "../../components/ProductGalery/ProductGalery";
+import ProductCharacteristics from "../../components/ProductCharacteristics/ProductCharacteristics";
+import ProductComments from "../../components/ProductComments/ProductComments";
 
 function ProductPage() {
   const product = {
@@ -30,23 +32,24 @@ function ProductPage() {
         color: "black",
       },
     ],
-    createdAt: "2024-01-21T12:00:00.000Z",
+    createdAt: "2024-01-29T12:00:00.000Z",
+    shortDescription:
+      "Якісна чоловіча футболка за доступною ціною, добре носиться й зберігає колір і форму досить довго. Футболка має прямий фасон без бічних швів. Відповідає вимогам стандарту Oeko-TexStandard 100. Це гарантує брак в одязі будь-яких речовин, що завдають шкоди людині або довкіллю.",
   };
 
   return (
     <div className={styles.wrapper}>
       <Breadcrumbs />
       <div className={styles.container}>
-        <div className={styles.productPicture}>
-          {/* <img className={styles.productImage} src={product.img} alt="product" />
-          <ProductBaner product={product} fontSize={14} /> */}
-          <ProductGalery product={product} />
-        </div>
+        <ProductGalery product={product} />
 
-        <div className={styles.productAbout}>
+        <div className={styles.productMainInfo}>
           <div className={styles.productName}>{product.name}</div>
           <div className={styles.productRating}>
-            <StarRating rating={product.rating} size={20} />
+            <div className={styles.productRatingReviews}>
+              <StarRating rating={product.rating} size={20} />
+              {product.rating && <span>Відгуків: 15</span>}
+            </div>
             <span className={styles.productCode}>Код: {product.id}</span>
           </div>
           <ProductSize size={product.size} />
@@ -54,6 +57,31 @@ function ProductPage() {
           <div className={styles.productTrade}>
             <ProductPrice price={product.price} discount={product.discount} fontSize={28} />
             <button className={styles.buyButton}>В кошик</button>
+          </div>
+
+          {product.shortDescription && (
+            <div className={styles.productDescription}>
+              <div className={styles.productTabsHeading}>Опис</div>
+              <div className={styles.productDescriptionContent}>
+                <p> {product.shortDescription}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.productAboutLeft}>
+          <div className={styles.productCharacteristics}>
+            <div className={styles.productTabsHeading}>Характеристики</div>
+            <ProductCharacteristics />
+          </div>
+        </div>
+        <div className={styles.productAboutRight}>
+          <div className={styles.productComents}>
+            <div className={styles.productTabsHeading}>
+              Відгуки покупців <span>15</span>
+            </div>
+            <ProductComments />
           </div>
         </div>
       </div>

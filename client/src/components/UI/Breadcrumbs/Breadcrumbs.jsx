@@ -16,7 +16,7 @@ function Breadcrumbs() {
           alt="home"
           className={styles.icon}
         />
-        / категорія / підкатегорія / штани спортивні
+        / категорія / підкатегорія / товар
       </div>
       {/* <div className={styles.currentBreadcrumb}>Одяг</div> */}
     </div>
