@@ -40,9 +40,4 @@ Frontend:
 - cd client
 - npm start
 
-- ![image](https://github.com/danilkass/clothes-shop/assets/111860815/6e6b528c-af64-440f-9405-a693e98067aa)
-
-
-Запустіть клієнтську частину frontend:
-- cd client
-- npm start
+![image](https://github.com/danilkass/clothes-shop/assets/111860815/6e6b528c-af64-440f-9405-a693e98067aa)
