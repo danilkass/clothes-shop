@@ -6,7 +6,7 @@
 Backend:
 - Node.js: Використовується для побудови серверної частини додатка.
 - Express: Фреймворк для створення веб-застосунків на базі Node.js.
-- PistgreSQL: Реляційна база даних.
+- PostgreSQL: Реляційна база даних.
 - Sequalize: ORM для спрощення взаємодії з базою даних PostgreSQL.
 
 Frontend:
@@ -39,6 +39,9 @@ Frontend:
 Запустіть сайт frontend: 
 - cd client
 - npm start
+
+![image](https://github.com/danilkass/clothes-shop/assets/111860815/6e6b528c-af64-440f-9405-a693e98067aa)
+
 
 Запустіть клієнтську частину frontend:
 - cd client
